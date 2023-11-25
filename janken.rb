@@ -1,5 +1,5 @@
 while true #プレイヤーがやめるまで繰り返し
-    while true #ゲーム全体繰り返し
+    while true #ゲーム勝敗つくまで繰り返し
         while true #じゃんけん繰り返し
             while true #じゃんけん不正入力回避
                 puts "じゃんけん..."
@@ -11,7 +11,7 @@ while true #プレイヤーがやめるまで繰り返し
                 else
                     break
                 end
-            end
+            end  #じゃんけん不正入力回避のend
 
             player_choice = player_choice.to_i
             opponent_choice = rand(2)
@@ -95,7 +95,7 @@ while true #プレイヤーがやめるまで繰り返し
                 status = "quit_game"
                 break
             end
-        end
+        end  #じゃんけん繰り返しのend
 
         while status == "draw"  #あいこの時の繰り返し
             while true #あいこの時不正入力回避
@@ -108,7 +108,7 @@ while true #プレイヤーがやめるまで繰り返し
                 else
                     break
                 end
-            end
+            end  #あいこの時不正入力回避のend
 
             player_choice = player_choice.to_i
             opponent_choice = rand(2)
@@ -189,7 +189,7 @@ while true #プレイヤーがやめるまで繰り返し
                 status = "quit_game"
                 break
             end
-        end
+        end  #あいこの時の繰り返しのend
         
         #以下、あっち向いてホイ
 
@@ -204,7 +204,7 @@ while true #プレイヤーがやめるまで繰り返し
                 else
                     break
                 end
-            end
+            end #あっち向いてホイの不正入力回避のend
 
             player_direction = player_direction.to_i
             opponent_direction = rand(3)
@@ -308,7 +308,7 @@ while true #プレイヤーがやめるまで繰り返し
                 else
                     break
                 end
-            end
+            end #あっち向いてホイの不正入力回避のend
 
             player_direction = player_direction.to_i
             opponent_direction = rand(3)
@@ -406,21 +406,21 @@ while true #プレイヤーがやめるまで繰り返し
         else
             break
         end
-    end
+    end #ゲーム勝敗つくまで繰り返しのend
 
     if status != "quit_game"
         puts "----------"
         puts "もう一回やる？"
         puts "0(やる)1(やらない)"
 
-        while true
+        while true #コンティニュー選択時の不正入力回避
             continue = gets.chomp
             if continue != "0" && continue != "1"
                 puts "[0か1を選んでね]"
             else
                 break
             end
-        end
+        end  #コンティニュー選択時の不正入力回避のend
 
         continue = continue.to_i
 
@@ -437,4 +437,4 @@ while true #プレイヤーがやめるまで繰り返し
     else 
         break
     end
-end
+end  #プレイヤーがやめるまで繰り返しのend
